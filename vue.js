@@ -14,6 +14,12 @@
             el: '#component2'
         });
 
+        var app = new Vue ({
+            el: '#photos',
+            data: {
+                chili:'<img src="images/chili.jpg" alt="White Chicken Chili" width="180">'
+            }
+        });
 
         var app = new Vue({
             el: '#blogposts',
