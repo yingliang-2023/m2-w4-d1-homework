@@ -93,11 +93,26 @@
         position: absolute;
       }
 
+.modalInfo{
+    text-align: left;
+    width: auto;
+}
        img:hover{
         cursor: pointer;
       }
 
+      .modalDisc{
+        font-size: small;
+        margin-bottom: 30px;
+      }
 
+      .close-button{
+        float: right;
+      }
+
+      .close-btn{
+        margin-top: 10px;
+      }
         footer {
             position: absolute;
             bottom: 0;
@@ -105,6 +120,7 @@
             width: 100%;
             text-align: center;
             font-size: 0.85em;
+            margin-bottom:0;
         }
     </style>
 
@@ -135,7 +151,9 @@
             </div>
 
             <section id="blogposts">
+
                 <div class="post">
+
                 <img
                 v-on:click="displayInfo1"
                 v-bind:src="obj1.profile"
@@ -162,16 +180,18 @@
                       </button>
 
                       <h3>{{ obj1.author }}</h3>
+
                       <div class="modalInfo">
-                        <span class="foodie"><b>Foodie Level:{{obj1.foodie_Level}}</b></span>
-                        <span class="modalDisc">{{ obj1.foodie_Level }}</span>
+                        <span class="foodie">Foodie Level:</span>
+                        <span v-html>{{ obj1.Foodie_Level }}</span>
                         <br />
-                        <p class="foodie"><b>Bio:</b></p>
-                        <div class="modalDisc">{{ obj1.bio }}</div>
+                        <p class="foodie"><strong>Bio:</strong></p>
+                        <div class="bio">{{ obj1.Bio }}</div>
+
                         <button
-                          class=""
+                          class="close-btn"
                           type="button"
-                          v-on:click="obj.isShowMyModal = false"
+                          v-on:click="obj1.isShowMyModal = false"
                         >
                           Close
                         </button>
@@ -186,14 +206,32 @@
                 </div>
 
                 <div class="post">
-
+                    
+                    <img
+                    v-on:click="displayInfo2"
+                    v-bind:src="obj2.profile"
+                    alt="profile image"
+                    width="50px"
+                    height="40px"
+                  />
                     {{obj2.author}} —
                     {{obj2.date}}
                     {{obj2.reply}}
                     <div v-html="obj2.text"></div>
+
+                    
+                    
                 </div>
 
                 <div class="post">
+                   
+                <img
+                v-on:click="displayInfo3"
+                v-bind:src="obj1.profile"
+                alt="profile image"
+                width="50px"
+                height="40px"
+              />
                     {{obj3.author}} —
                     {{obj3.date}}
                     {{obj3.reply}}
@@ -201,10 +239,20 @@
                 </div>
 
                 <div class="post">
+                  
+                <img
+                v-on:click="displayInfo4"
+                v-bind:src="obj1.profile"
+                alt="profile image"
+                width="50px"
+                height="40px"
+              />
                     {{obj4.author}} —
                     {{obj4.date}}
                     {{obj4.reply}}
                     <div v-html="obj4.text"></div>
+
+                    
                 </div>
 
             </section>
@@ -287,6 +335,15 @@
             methods:{
                 displayInfo1: function(){
                     this.obj1.isShowMyModal=!this.obj1.isShowMyModal;
+                },
+                displayInfo2: function(){
+                    this.obj2.isShowMyModal=!this.obj2.isShowMyModal;
+                },
+                displayInfo3: function(){
+                    this.obj3.isShowMyModal=!this.obj3.isShowMyModal;
+                },
+                displayInfo4: function(){
+                    this.obj4.isShowMyModal=!this.obj4.isShowMyModal;
                 },
 
 
