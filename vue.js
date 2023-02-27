@@ -6,6 +6,11 @@
             template: '<h2>Comments</h2>'
         });
 
+        Vue.component('mycomponent3', {
+            template: "<ul><li><a href='#'>Home</a></li><li><a href='#'>Recipes</a></li><li><a href='#'>Lifestyles</a></li><li><a href='#'>Videos</a></li><li><a href='#'>About</a></li></ul>"
+        });
+
+
         var vm1 = new Vue({
             el: '#component1'
         });
@@ -13,12 +18,20 @@
         var vm2 = new Vue({
             el: '#component2'
         });
+        var vm3 = new Vue({
+            el: '#component3'
+        });
 
         var app = new Vue ({
             el: '#photos',
             data: {
                 chili:'<img src="images/chili.jpg" alt="White Chicken Chili" width="180">'
             }
+
+          
+
+
+
         });
 
         var app = new Vue({
